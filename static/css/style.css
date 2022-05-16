@@ -5,17 +5,41 @@ body {
 
 .main {
     text-align: center;
-    background-color: yellow;
     padding-bottom: 15rem;
+}
+
+.window {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
 }
 
 .game {
     text-align: center;
-    background-color: blue;
-    height: 40rem;
+    flex-direction: column;
+    max-width: 350px;
+    display: flex;
+    flex-grow: 1;
 }
 
 .line {
-    margin: 1rem 0rem 1rem 0rem;
-    background-color: green;
+    /* margin: 1rem 0rem 1rem 0rem; */
+    height: 5rem;
+    display: flex;
+    flex-grow: 1;
+}
+
+.box {
+    background-color: #121214;
+    height: 0.5rem;
+    width: 100%;
+    height: 64px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 32px;
+    border: 2px solid grey;
 }
