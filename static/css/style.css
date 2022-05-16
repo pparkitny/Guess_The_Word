@@ -1,0 +1,21 @@
+body {
+    background-color: #121214;
+    color: white;
+}
+
+.main {
+    text-align: center;
+    background-color: yellow;
+    padding-bottom: 15rem;
+}
+
+.game {
+    text-align: center;
+    background-color: blue;
+    height: 40rem;
+}
+
+.line {
+    margin: 1rem 0rem 1rem 0rem;
+    background-color: green;
+}
