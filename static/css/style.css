@@ -5,7 +5,8 @@ body {
 
 .main {
     text-align: center;
-    padding-bottom: 15rem;
+    padding-bottom: 10rem;
+    font-size: 32px;
 }
 
 .window {
@@ -25,7 +26,7 @@ body {
 
 .line {
     /* margin: 1rem 0rem 1rem 0rem; */
-    height: 5rem;
+    height: 4.5rem;
     display: flex;
     flex-grow: 1;
 }
