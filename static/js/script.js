@@ -1,6 +1,11 @@
 var elements = document.getElementsByClassName('box'); // get all elements with class 'box'
 var requiredElement = elements[0]; // get first element with class 'box'
 var count = 0;
+var word = document.getElementById('word');
+var wordName = word.getAttribute("value");
+word.remove()
+console.log(wordName)
+
 document.addEventListener('keydown', function(event) { // listening for typing on keyboard
     const key = event.key;
     var letters = /^[A-Za-z]+$/; // only letters
@@ -34,5 +39,5 @@ document.addEventListener('keydown', function(event) { // listening for typing o
             });
         }
      }
-    
+     
 });
