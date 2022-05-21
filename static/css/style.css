@@ -43,3 +43,18 @@ body {
     font-size: 32px;
     border: 2px solid grey;
 }
+
+input[type=text] {
+    width: 100%;
+    height: 100%;
+    background-color: #121214;
+    font-size: 42px;
+    color: white;
+    border:none; 
+    background: transparent; 
+    outline: 0;
+    text-align: center;
+    cursor: default;
+    caret-color: transparent;
+    
+    }
