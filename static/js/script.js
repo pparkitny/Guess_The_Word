@@ -4,59 +4,49 @@ var a = document.getElementById("a"),
     d = document.getElementById("d"),
     e = document.getElementById("e");
 
-a.onkeyup = function() {
-    if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+a.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (key === "Backspace") {
+        if (this.value.length < parseInt(this.attributes["maxlength"].value)) {a.focus()};
+    }
+    else if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
         b.focus();
     }
-    this.addEventListener('keydown', function(event) {
-        const key = event.key; 
-        if (key === "Backspace") {
-            if (this.value.length < parseInt(this.attributes["maxlength"].value)) {a.focus()};
-        }
-    });
-}
+});
 
-b.onkeyup = function() {
-    if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+b.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (key === "Backspace") {
+        if (this.value.length < parseInt(this.attributes["maxlength"].value)) {a.focus()};
+    }
+    else if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
         c.focus();
     }
-    this.addEventListener('keydown', function(event) {
-        const key = event.key;
-        if (key === "Backspace") {
-            if (this.value.length < parseInt(this.attributes["maxlength"].value)) {a.focus()};
-        }
-    });
-}
+});
 
-c.onkeyup = function() {
-    if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+c.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (key === "Backspace") {
+        if (this.value.length < parseInt(this.attributes["maxlength"].value)) {b.focus()};
+    }
+    else if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
         d.focus();
     }
-    this.addEventListener('keydown', function(event) {
-        const key = event.key;
-        if (key === "Backspace") {
-            if (this.value.length < parseInt(this.attributes["maxlength"].value)) {b.focus()};  
-        }
-    });
-}
+});
 
-d.onkeyup = function() {
-    if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
+d.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (key === "Backspace") {
+        if (this.value.length < parseInt(this.attributes["maxlength"].value)) {c.focus()};
+    }
+    else if (this.value.length === parseInt(this.attributes["maxlength"].value)) {
         e.focus();
     }
-    this.addEventListener('keydown', function(event) {
-        const key = event.key;
-        if (key === "Backspace") {
-            if (this.value.length < parseInt(this.attributes["maxlength"].value)) {c.focus()};  
-        }
-    });
-}
+});
 
-e.onkeyup = function() {
-    this.addEventListener('keydown', function(event) {
-        const key = event.key;
-        if (key === "Backspace") {
-            if (this.value.length < parseInt(this.attributes["maxlength"].value)) {d.focus()};
-        }
-    });
-}
+e.addEventListener('keydown', function(event) {
+    const key = event.key;
+    if (key === "Backspace") {
+        if (this.value.length < parseInt(this.attributes["maxlength"].value)) {d.focus()};
+    }
+});
