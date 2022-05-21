@@ -30,7 +30,7 @@ body {
     flex-grow: 1;
 }
 
-.box {
+.box ,.boxDone {
     background-color: #121214;
     height: 0.5rem;
     width: 100%;
@@ -42,33 +42,5 @@ body {
     font-weight: 700;
     font-size: 32px;
     border: 2px solid grey;
-}
-
-.boxDone {
-    background-color: #121214;
-    height: 0.5rem;
-    width: 100%;
-    height: 64px;
-    margin: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 32px;
-    border: 2px solid grey;
-}
-
-input[type=text] {
-    width: 100%;
-    height: 100%;
-    background-color: #121214;
-    font-size: 38px;
-    color: white;
-    border:none; 
-    background: transparent; 
-    outline: 0;
-    text-align: center;
-    cursor: default;
-    caret-color: transparent;
     text-transform: uppercase;
-    }
+}
