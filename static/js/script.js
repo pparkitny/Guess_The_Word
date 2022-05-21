@@ -26,4 +26,13 @@ document.addEventListener('keydown', function(event) { // listening for typing o
             requiredElement = elements[0] // again get first element with class name "box"
      }
     }
+     else if(event.keyCode === 13) { // Click 'enter' and app will change css style of each boxes
+        if(document.getElementsByClassName('boxDone').length == 5){ // do it only when it is full line of letters
+            var elArray = document.getElementsByClassName('boxDone'); // get all boxes in line which are not empty (so every box)
+            Array.from(elArray).forEach(element => { // for every box it will be change css style
+                element.className = "boxGreen"; // change classname 
+            });
+        }
+     }
+    
 });
