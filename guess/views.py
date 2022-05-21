@@ -14,4 +14,5 @@ class MainView(View):
         return render(request, 'main.html')
 
     def post(self, request):
+        
         return
