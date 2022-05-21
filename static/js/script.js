@@ -9,6 +9,7 @@ console.log(wordName)
 document.addEventListener('keydown', function(event) { // listening for typing on keyboard
     const key = event.key;
     var letters = /^[A-Za-z]+$/; // only letters
+    var i = 0;
     if (key === "Backspace") { // check if user typre 'Backspace'
         if(document.getElementsByClassName('boxDone').length > 0){
             var delElement = Array.from(
@@ -24,7 +25,7 @@ document.addEventListener('keydown', function(event) { // listening for typing o
     }
     else if(String.fromCharCode(event.keyCode).match(letters)) { // check if user type letter
         if(document.getElementsByClassName('boxDone').length < 5){ // check if there is only 5 divs with class "boxDone"
-            requiredElement.innerHTML += key;
+            requiredElement.innerHTML = key.toUpperCase();
             count++;
             requiredElement.setAttribute('name', 'letter' + count); // change value of div to key that user typed
             requiredElement.className = "boxDone"; // change name of class to "boxDone"
@@ -35,9 +36,19 @@ document.addEventListener('keydown', function(event) { // listening for typing o
         if(document.getElementsByClassName('boxDone').length == 5){ // do it only when it is full line of letters
             var elArray = document.getElementsByClassName('boxDone'); // get all boxes in line which are not empty (so every box)
             Array.from(elArray).forEach(element => { // for every box it will be change css style
-                element.className = "boxGreen"; // change classname 
+                if (wordName.includes(element.innerHTML)) {
+                    if (element.innerHTML == wordName[i]){
+                        element.className = "boxGreen"; 
+                    }
+                    else {
+                        element.className = "boxYellow";
+                    }
+                }
+                else {
+                    element.className = "boxBlack";
+                }
+                i++;
             });
         }
      }
-     
 });
