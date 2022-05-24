@@ -7,17 +7,20 @@ from json import dumps
 import json
 from django.shortcuts import render, redirect, get_object_or_404
 
-# Create your views here.
-
 
 class MainView(View):
     """ This class represent main site of whole app
     """
 
     def get(self, request):
-        words = ['POLKA', 'LOTEK', 'MROZI']
-        random.shuffle(words)
-        word = words[0]
+        with open('5words.txt', 'r') as f:  # open file and get words
+            my_words = []  # create list
+            for w in f:  # loop for taking every word and put it in list
+                my_words.append(w.upper())
+
+        random.shuffle(my_words)  # shuffle list to get random word
+        word = my_words[0]
+
         context = {'word': word}
         return render(request, 'main.html', context)
 
