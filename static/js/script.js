@@ -1,9 +1,9 @@
 var elements = document.getElementsByClassName('box'); // get all elements with class 'box'
 var requiredElement = elements[0]; // get first element with class 'box'
 var count = 0;
-var word = document.getElementById('word');
-var wordName = word.getAttribute("value");
-word.remove()
+var word = document.getElementById('word'); // get given random word from django views.py
+var wordName = word.getAttribute("value"); // get value of given word from django views.py
+word.remove() // remove this div to hide it from users
 console.log(wordName)
 
 document.addEventListener('keydown', function(event) { // listening for typing on keyboard
