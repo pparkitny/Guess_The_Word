@@ -76,7 +76,7 @@ body {
     flex-grow: 1;
 }
 
-.line {
+.line, .lineDone, .lineWin {
     height: 4.5rem;
     display: flex;
     flex-grow: 1;
