@@ -18,10 +18,11 @@ class MainView(View):
             for w in f:  # loop for taking every word and put it in list
                 my_words.append(w.upper())
 
+        all_words = ' '.join(my_words)
         random.shuffle(my_words)  # shuffle list to get random word
         word = my_words[0]
 
-        context = {'word': word}
+        context = {'word': word, 'all_words': all_words}
         return render(request, 'main.html', context)
 
     def post(self, request):

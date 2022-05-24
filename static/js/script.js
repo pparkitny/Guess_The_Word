@@ -2,9 +2,15 @@ var elements = document.getElementsByClassName('box'); // get all elements with 
 var requiredElement = elements[0]; // get first element with class 'box'
 var count = 0;
 var word = document.getElementById('word'); // get given random word from django views.py
-var wordName = word.getAttribute("value"); // get value of given word from django views.py
+var word_name = word.getAttribute("value"); // get value of given word from django views.py
+var all_words = document.getElementById('all_words'); // get given random word from django views.py
+var whole_all_words = all_words.getAttribute("value"); // get value of given word from django views.py
+var another = document.getElementsByClassName('another')[0]; // get div button another
+var show_word = document.getElementById('show_word'); // get given random word from django views.py
+
 word.remove() // remove this div to hide it from users
-console.log(wordName)
+all_words.remove() // remove this div to hide it from users
+console.log(word_name)
 
 document.addEventListener('keydown', function(event) { // listening for typing on keyboard
     const key = event.key;
@@ -35,20 +41,50 @@ document.addEventListener('keydown', function(event) { // listening for typing o
      else if(event.keyCode === 13) { // Click 'enter' and app will change css style of each boxes
         if(document.getElementsByClassName('boxDone').length == 5){ // do it only when it is full line of letters
             var elArray = document.getElementsByClassName('boxDone'); // get all boxes in line which are not empty (so every box)
-            Array.from(elArray).forEach(element => { // for every box it will be change css style
-                if (wordName.includes(element.innerHTML)) { // check if given word includes letter from box
-                    if (element.innerHTML == wordName[i]){ // check if letter from box is on right opsition
-                        element.className = "boxGreen";  // change class name to another with another css style
+            var temp_string = ""
+            Array.from(elArray).forEach(element => { // Create string to check if user type word that exist
+                temp_string += element.innerHTML;
+            })
+
+            if (whole_all_words.includes(temp_string)) { // check if word exist in our db
+                show_word.innerHTML = ("This is a word :)");
+                show_word.style.color = '#121214';
+                Array.from(elArray).forEach(element => { // for every box it will be change css style
+                    if (word_name.includes(element.innerHTML)) { // check if given word includes letter from box
+                        if (element.innerHTML == word_name[i]){ // check if letter from box is on right opsition
+                            element.className = "boxGreen";  // change class name to another with another css style
+                        }
+                        else {
+                            element.className = "boxYellow"; // change class name to another with another css style
+                        }
                     }
                     else {
-                        element.className = "boxYellow"; // change class name to another with another css style
+                        element.className = "boxBlack"; // change class name to another with another css style
                     }
+                    i++; // increment variable 'i' to check all the letters and positions in word
+                });
+            }
+            else {
+                if (show_word.style.color == "red" ){ 
+                    show_word.innerHTML = ("This is not a word!"); // show msg to user
+                    show_word.style.color = 'pink';
                 }
                 else {
-                    element.className = "boxBlack"; // change class name to another with another css style
+                show_word.innerHTML = ("This is not a word!"); // show msg to user
+                show_word.style.color = 'red';
                 }
-                i++; // increment variable 'i' to check all the letters and positions in word
-            });
+            }
+        }
+        else {
+            show_word.innerHTML = ("Fill whole line"); // show msg to user
+            show_word.style.color = 'white';
         }
      }
+});
+
+
+document.addEventListener('click', function( event ) { // get another word by refreshing website
+    if (another == event.target) {    
+        window.location.reload(true); // reload site
+    }
 });
