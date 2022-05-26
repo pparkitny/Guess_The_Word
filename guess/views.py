@@ -13,7 +13,7 @@ class MainView(View):
     """
 
     def get(self, request):
-        with open('5words.txt', 'r') as f:  # open file and get words
+        with open('game_words.txt', 'r') as f:  # open file and get words
             my_words = []  # create list
             for w in f:  # loop for taking every word and put it in list
                 my_words.append(w.upper())
