@@ -97,7 +97,7 @@ document.addEventListener('keydown', function(event) { // listening for typing o
                 }
             }
         }
-        else if (document.getElementsByClassName('boxDone').length < 5 && document.getElementsByClassName('boxDone').length > 1) { // check if user fill whole line or if game is ended
+        else if (document.getElementsByClassName('boxDone').length < 5) { // check if user fill whole line or if game is ended
             show_word.innerHTML = ("Fill whole line"); // show msg to user
             show_word.style.color = 'white';
         }
