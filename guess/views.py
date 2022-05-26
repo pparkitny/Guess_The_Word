@@ -16,7 +16,7 @@ class MainView(View):
 
     def get(self, request):
         # open file and get 5 letters words that are acceptable in games
-        with open('acceptable_words.txt', 'r') as f:
+        with open('words/acceptable_words.txt', 'r') as f:
             my_words = []  # create list
             for w in f:  # loop for taking every word and put it in list
                 my_words.append(w.upper())  # add word to list

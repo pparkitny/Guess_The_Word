@@ -8,15 +8,13 @@ function randomColor() {
   
   
   document.addEventListener('mouseover', event => {
-      if (document.querySelector('a') == event.target) {
-        console.log("KURDE")  
+      if (document.querySelector('a') == event.target) { 
         event.target.style.color = randomColor();
       }
   });
 
   document.addEventListener('mouseout', event => {
     if (document.querySelector('a') == event.target) {
-      console.log("KURDE")  
       event.target.style.color = randomColor();
     }
 });
