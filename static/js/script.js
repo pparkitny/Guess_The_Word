@@ -52,10 +52,11 @@ document.addEventListener('keydown', function(event) { // listening for typing o
                 show_word.style.color = '#121214';
                 Array.from(elArray).forEach(element => { // for every box it will be change css style
                     if (word_name.includes(element.innerHTML)) { // check if given word includes letter from box
-                        if (element.innerHTML == word_name[i]){ // check if letter from box is on right opsition
+                        if (element.innerHTML == word_name[i]){ // check if letter from box is on right position
                             element.className = "boxGreen";  // change class name to another with another css style
                             win++;
                             console.log(win)
+                            
                             if (win == 5) {
                                 element.parentElement.className = "lineWin"; // win of the game!
                                 show_word.innerHTML = (word_name); // show msg to user
@@ -101,6 +102,42 @@ document.addEventListener('keydown', function(event) { // listening for typing o
             show_word.innerHTML = ("Fill whole line"); // show msg to user
             show_word.style.color = 'white';
         }
+
+        var BlackArray = document.getElementsByClassName('boxBlack'); // get all boxes in line which are not empty (so every box)
+        var temp_string_black = ""
+        var YellowArray = document.getElementsByClassName('boxYellow'); // get all boxes in line which are not empty (so every box)
+        var temp_string_yellow = ""
+        var GreenArray = document.getElementsByClassName('boxGreen'); // get all boxes in line which are not empty (so every box)
+        var temp_string_green = ""
+        Array.from(BlackArray).forEach(element => { 
+            temp_string_black += element.innerHTML;
+        })
+        Array.from(YellowArray).forEach(element => { 
+            temp_string_yellow += element.innerHTML;
+        })
+        Array.from(GreenArray).forEach(element => { 
+            temp_string_green += element.innerHTML;
+        })
+
+        var keyArray = document.getElementsByClassName('key');
+            Array.from(keyArray).forEach(element => { 
+                if (temp_string_black.includes(element.innerHTML)) {
+                    element.className = "key_black"
+                }
+            })
+            Array.from(keyArray).forEach(element => { 
+                if (temp_string_yellow.includes(element.innerHTML)) {
+                    if (element.className == 'key_green') {
+                        element.className == 'key_green'
+                    }
+                    else { element.className = "key_yellow" }
+                }
+            })
+            Array.from(keyArray).forEach(element => { 
+                if (temp_string_green.includes(element.innerHTML)) {
+                    element.className = "key_green"
+                }
+            })
     }
 });
 
