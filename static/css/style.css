@@ -167,11 +167,39 @@ body {
     padding: 15px;
     color: white;
     background-color: #808384;
-    border:1px solid 808384;
+    border:1px solid #808384;
     text-transform: uppercase;
     border-radius: 4px;
     cursor: pointer;
     margin: 0 6px 0 0;
     font-family: inherit;
     font-weight: 700;
+}
+
+.key_black, .key_yellow, .key_green {
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 6px 0 0;
+    font-family: inherit;
+    font-weight: 700;
+}
+
+.key_black {
+    background-color: #3a3a3c;
+    border:1px solid #3a3a3c;
+}
+
+.key_yellow {
+    background-color: #b49f3a;
+    border:1px solid #b49f3a;
+}
+
+.key_green {
+    background-color: #538d4e;
+    border:1px solid #538d4e;
 }
