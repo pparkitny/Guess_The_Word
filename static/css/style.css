@@ -13,13 +13,13 @@ body {
 
 .main {
     text-align: center;
-    font-size: 32px;
+    font-size: 20px;
 }
 
 .show_word {
     padding: 1rem;
-    margin-bottom: 2rem;
-    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
     text-align: center;
     color: #121214;
 }
@@ -145,4 +145,33 @@ body {
     font-size: 32px;
     border: 2px solid #538d4e;
     text-transform: uppercase;
+}
+
+.keyboard {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.keyboard_line {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px;
+}
+
+.key {
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    color: white;
+    background-color: #808384;
+    border:1px solid 808384;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 6px 0 0;
+    font-family: inherit;
+    font-weight: 700;
 }
