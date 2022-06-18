@@ -13,16 +13,38 @@ all_words.remove() // remove this div to hide it from users
 console.log(word_name)
 
 
-var keys = Array.from(document.getElementsByClassName('key'))  // create array from key classes
+const enter_click = new KeyboardEvent('keydown', {
+    bubbles: true, cancelable: true, keyCode: 13  // simulate enter click
+});
+
+
+var keys = Array.from(document.getElementsByClassName('key'))  // create array from key classes (from app keyboard)
 keys.forEach(el => {
     el.addEventListener('click', function (event) {  // if user click on div do action
-        console.log(el.innerHTML)
-        requiredElement.innerHTML = el.innerHTML
-        count++;
-        requiredElement.setAttribute('name', 'letter' + count); // change value of div to key that user typed
-        requiredElement.className = "boxDone"; // change name of class to "boxDone"
-        requiredElement = elements[0]
-        
+        if (el.innerHTML == 'enter'){
+            document.body.dispatchEvent(enter_click);   // simulate enter click
+        }
+        else if (el.innerHTML == 'usuń'){
+            if(document.getElementsByClassName('boxDone').length > 0){
+                var delElement = Array.from(
+                    document.getElementsByClassName('boxDone') // get last element with class 'boxDone'
+                ).pop();
+                delElement.innerHTML = ""; // change value of div to empty
+                delElement.className = "box"; // change name of class to 'box'
+                requiredElement = elements[0] // again get first element with 'box' class
+                count--;
+                requiredElement.setAttribute('name', ''); 
+            }
+        }
+        else{
+            if(document.getElementsByClassName('boxDone').length < 5){
+            requiredElement.innerHTML = el.innerHTML  // change value of div to empty
+            count++;
+            requiredElement.setAttribute('name', 'letter' + count); // change value of div to key that user typed
+            requiredElement.className = "boxDone"; // change name of class to "boxDone"
+            requiredElement = elements[0]
+        }
+    }pr
     });
 });
 
@@ -47,7 +69,7 @@ document.addEventListener('keydown', function(event) { // listening for typing o
             document.getElementsByClassName('lineWin').length < 1 && 
             document.getElementsByClassName('box').length > 0) { // check if user type letter
         if(document.getElementsByClassName('boxDone').length < 5){ // check if there is only 5 divs with class "boxDone"
-            requiredElement.innerHTML = key.toUpperCase();
+            requiredElement.innerHTML = key.toUpperCase();  // fill first empty div with box class
             count++;
             requiredElement.setAttribute('name', 'letter' + count); // change value of div to key that user typed
             requiredElement.className = "boxDone"; // change name of class to "boxDone"
