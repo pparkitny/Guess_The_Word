@@ -175,6 +175,10 @@ body {
     font-weight: 700;
 }
 
+.key:hover {
+    border:1px solid #ffffff;
+}
+
 .key_black, .key_yellow, .key_green {
     align-items: center;
     justify-content: center;
