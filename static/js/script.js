@@ -89,17 +89,17 @@ document.addEventListener('keydown', function(event) { // listening for typing o
             }
             else {
                 if (show_word.style.color == "red" ){ 
-                    show_word.innerHTML = ("Still not a word!"); // show msg to user
+                    show_word.innerHTML = ("To ciągle nie słowo!"); // show msg to user
                     show_word.style.color = 'pink';
                 }
                 else {
-                show_word.innerHTML = ("That's not a word!"); // show msg to user
+                show_word.innerHTML = ("To nie jest słowo!"); // show msg to user
                 show_word.style.color = 'red';
                 }
             }
         }
         else if (document.getElementsByClassName('boxDone').length < 5) { // check if user fill whole line or if game is ended
-            show_word.innerHTML = ("Fill whole line"); // show msg to user
+            show_word.innerHTML = ("Wpisz całe słowo"); // show msg to user
             show_word.style.color = 'white';
         }
 
