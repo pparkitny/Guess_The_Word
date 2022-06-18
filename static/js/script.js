@@ -12,6 +12,20 @@ word.remove() // remove this div to hide it from users
 all_words.remove() // remove this div to hide it from users
 console.log(word_name)
 
+
+var keys = Array.from(document.getElementsByClassName('key'))  // create array from key classes
+keys.forEach(el => {
+    el.addEventListener('click', function (event) {  // if user click on div do action
+        console.log(el.innerHTML)
+        requiredElement.innerHTML = el.innerHTML
+        count++;
+        requiredElement.setAttribute('name', 'letter' + count); // change value of div to key that user typed
+        requiredElement.className = "boxDone"; // change name of class to "boxDone"
+        requiredElement = elements[0]
+        
+    });
+});
+
 document.addEventListener('keydown', function(event) { // listening for typing on keyboard
     const key = event.key;
     var letters = /^[A-Za-z]+$/; // only letters
