@@ -13,9 +13,7 @@ all_words.remove() // remove this div to hide it from users
 console.log(word_name)
 
 
-const enter_click = new KeyboardEvent('keydown', {
-    bubbles: true, cancelable: true, keyCode: 13  // simulate enter click
-});
+const enter_click = new KeyboardEvent('keydown', {bubbles: true, cancelable: true, keyCode: 13});  // simulate enter click
 
 
 var keys = Array.from(document.getElementsByClassName('key'))  // create array from key classes (from app keyboard)
