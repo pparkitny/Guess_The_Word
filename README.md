@@ -31,6 +31,11 @@
 ## About The Project
 
 This project was created as a hobby in my spare time. The application is inspired by the [WORDLE](https://www.nytimes.com/games/wordle/index.html) game, but words are in Polish.
+ <br/>
+
+The database of words that are used in the application can be found [here](https://sjp.pl/sl/growe/?d=5) <br/>
+The database has more than 6,000 five-letter words.  <br/>
+Some of them were removed by me, because they were too difficult.
 
 ### Built With
 
@@ -43,8 +48,6 @@ These are the main technologies used to create this application.
 * HTML
 * CSS
 * JS
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
