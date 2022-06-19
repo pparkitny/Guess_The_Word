@@ -3,6 +3,8 @@
 _____
 ### APP IS NOW DEPLOYED ON HEROKU SERVER! <br>
 YOU CAN CHECK IT HERE -> [GUESS THE WORD](https://guessthewordpp.herokuapp.com/)
+
+### --- IT WORKS WELL ONLY ON PC ---
 ____
 ##### Full "README" file will be created soon
 
