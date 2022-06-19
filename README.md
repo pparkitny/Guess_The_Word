@@ -21,6 +21,7 @@
       <a href="#getting-started">Getting Started</a>
     </li>
     <li><a href="#how-to-play">How to play</a></li>
+   <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
@@ -103,6 +104,18 @@ If the player fails to guess the word in six tries, a red word will appear above
   <h3 align="center">
     To play again player can click the button bellow keyboard or refresh page
   </h3>
+
+<!-- ROADMAP -->
+## Roadmap
+
+- [x] Window Game
+- [x] Database with 5-letter words
+- [x] Game works! Player can guess words
+- [x] Keyboard below window game
+- [x] Place the project on the server
+- [ ] Mobile version
+- [ ] Theme selection
+- [ ] Player's score
 
 <!-- CONTACT -->
 ## Contact
